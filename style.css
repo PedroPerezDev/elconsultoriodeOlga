@@ -239,8 +239,8 @@ body {
 
 .btn-danger {
   background: #C4607A;
-  color: var(--color-white);
-  border-color: var(--color-white);
+  color: #3D2B3D;
+  border-color: #3D2B3D;
 }
 
 /* ─── Modal ──────────────────────────────────────── */
