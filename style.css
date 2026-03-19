@@ -71,6 +71,11 @@ body {
   margin: 0 auto;
 }
 
+/* ─── Card wrapper ───────────────────────────────── */
+.card-wrapper {
+  position: relative;
+}
+
 /* ─── Mascot ─────────────────────────────────────── */
 .mascot-img {
   position: absolute;
