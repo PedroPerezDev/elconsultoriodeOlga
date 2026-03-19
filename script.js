@@ -1,7 +1,5 @@
 /* ─── Constantes ────────────────────────────────── */
-const SIZES   = ['size-xl', 'size-lg', 'size-md', 'size-sm'];
-const WEIGHTS = ['weight-black', 'weight-bold', 'weight-regular', 'weight-light'];
-const COLORS  = ['#E8547A', '#F9C846', '#2EC4B6', '#FF6B35', '#FFFFFF', '#A78BFA'];
+const COLORS = ['#E8547A', '#F9C846', '#2EC4B6', '#FF6B35', '#FFFFFF', '#A78BFA'];
 const LS_KEY  = 'frases_usuario';
 
 const FALLBACK_FRASES = [
@@ -82,7 +80,7 @@ function renderizarFrase(texto) {
   const fragment = document.createDocumentFragment();
   grupos.forEach((grupo, index) => {
     const span = document.createElement('span');
-    span.className = `phrase-word ${pick(SIZES)} ${pick(WEIGHTS)}`;
+    span.className = 'phrase-word';
     span.style.color = pick(COLORS);
     span.style.animationDelay = `${index * 60}ms`;
     span.textContent = grupo;
