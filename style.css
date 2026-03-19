@@ -32,12 +32,11 @@ body {
 
 /* ─── Header ─────────────────────────────────────── */
 .site-header {
-  background: #2B2D42;
+  background: #C47FA0;
   padding: 1rem 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 5px 0 #EF233C;
   flex-shrink: 0;
 }
 
