@@ -214,22 +214,18 @@ body {
   background: var(--color-hot-pink);
   color: var(--color-white);
   border-color: var(--color-white);
-  box-shadow: 4px 4px 0 var(--color-yellow);
 }
 .btn-primary:hover {
   transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0 var(--color-yellow);
 }
 
 .btn-secondary {
   background: var(--color-cyan);
   color: var(--color-white);
   border-color: var(--color-white);
-  box-shadow: 4px 4px 0 var(--color-orange);
 }
 .btn-secondary:hover {
   transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0 var(--color-orange);
 }
 
 .btn-ghost {
