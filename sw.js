@@ -5,7 +5,8 @@ const ASSETS = [
   './style.css',
   './script.js',
   './frases.json',
-  './imagenes/olga.png'
+  './imagenes/olga.png',
+  './imagenes/icon.svg'
 ];
 
 self.addEventListener('install', e => {

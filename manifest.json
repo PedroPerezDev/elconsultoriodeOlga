@@ -9,15 +9,9 @@
   "theme_color": "#F1B3D6",
   "icons": [
     {
-      "src": "imagenes/olga.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "imagenes/olga.png",
-      "sizes": "512x512",
-      "type": "image/png",
+      "src": "imagenes/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
       "purpose": "any maskable"
     }
   ]
