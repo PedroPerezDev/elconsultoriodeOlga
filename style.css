@@ -96,19 +96,18 @@ body {
 .card-wrapper {
   flex: 1;
   position: relative;
-  min-height: 0;
+  min-height: 200px;
 }
 
 /* ─── Phrase card ────────────────────────────────── */
 .phrase-card {
+  position: absolute;
+  inset: 0;
   background: var(--color-card);
   border: 3px solid var(--color-yellow);
   border-radius: var(--radius);
   padding: clamp(1.2rem, 3vw, 2.5rem);
   padding-right: clamp(120px, 30%, 280px);
-  height: 100%;
-  min-height: 200px;
-  width: 100%;
   display: flex;
   flex-wrap: wrap;
   align-content: center;
@@ -118,7 +117,6 @@ body {
     6px 6px 0 var(--color-hot-pink),
     12px 12px 0 var(--color-yellow);
   line-height: 1.1;
-  position: relative;
   overflow: hidden;
   transition: box-shadow var(--transition);
   word-break: break-word;
@@ -319,19 +317,19 @@ body {
 /* ─── Responsive ─────────────────────────────────── */
 @media (max-width: 480px) {
   .main-grid {
-    padding: 1rem;
+    padding: 0.75rem;
   }
   .phrase-stage {
     gap: 0.75rem;
   }
   .mascot-img {
-    height: 75%;
-    max-height: 180px;
+    height: 55%;
+    max-height: none;
     right: 0.5rem;
   }
   .phrase-card {
     padding: 1rem;
-    padding-right: 120px;
+    padding-right: 110px;
   }
   .action-buttons { justify-content: center; }
 }
