@@ -63,34 +63,31 @@ body {
 .main-grid {
   flex: 1;
   display: grid;
-  grid-template-columns: clamp(100px, 18vw, 220px) 1fr;
+  grid-template-columns: 1fr;
   gap: 0;
-  align-items: end;
   padding: 2rem 2rem 3rem;
-  max-width: 1200px;
+  max-width: 900px;
   width: 100%;
   margin: 0 auto;
 }
 
 /* ─── Mascot ─────────────────────────────────────── */
-.mascot-column {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  padding-bottom: 0;
-}
-
 .mascot-img {
-  width: 100%;
-  max-width: 200px;
+  position: absolute;
+  bottom: 0;
+  right: 1rem;
+  height: 90%;
+  max-height: 260px;
+  width: auto;
   object-fit: contain;
-  filter: drop-shadow(0 0 18px var(--color-hot-pink));
+  filter: drop-shadow(0 0 14px var(--color-hot-pink));
   animation: mascot-float 4s ease-in-out infinite;
+  pointer-events: none;
 }
 
 @keyframes mascot-float {
   0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-12px); }
+  50%       { transform: translateY(-10px); }
 }
 
 /* ─── Phrase stage ───────────────────────────────── */
@@ -98,7 +95,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding-left: 2rem;
 }
 
 /* ─── Phrase card ────────────────────────────────── */
@@ -106,7 +102,7 @@ body {
   background: var(--color-card);
   border: 3px solid var(--color-yellow);
   border-radius: var(--radius);
-  padding: clamp(1.5rem, 4vw, 3rem);
+  padding: clamp(1.5rem, 4vw, 3rem) clamp(160px, 28%, 300px) clamp(1.5rem, 4vw, 3rem) clamp(1.5rem, 4vw, 3rem);
   min-height: 220px;
   display: flex;
   flex-wrap: wrap;
@@ -330,14 +326,14 @@ body {
 /* ─── Responsive ─────────────────────────────────── */
 @media (max-width: 640px) {
   .main-grid {
-    grid-template-columns: 1fr;
     padding: 1.25rem 1rem 2rem;
   }
-  .mascot-column {
-    justify-content: flex-end;
-    padding-right: 1rem;
+  .mascot-img {
+    max-height: 140px;
+    right: 0.5rem;
   }
-  .mascot-img { max-width: 110px; }
-  .phrase-stage { padding-left: 0; }
+  .phrase-card {
+    padding-right: 110px;
+  }
   .action-buttons { justify-content: center; }
 }
