@@ -1,5 +1,5 @@
 /* ─── Constantes ────────────────────────────────── */
-const COLORS = ['#E8547A', '#F9C846', '#2EC4B6', '#FF6B35', '#FFFFFF', '#A78BFA'];
+const COLORS = ['#C2608E', '#7AAFC4', '#5BA08A', '#A07ABF', '#C47A5A', '#3D2B3D'];
 const LS_KEY  = 'frases_usuario';
 
 const FALLBACK_FRASES = [
