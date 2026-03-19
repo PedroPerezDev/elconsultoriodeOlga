@@ -3,21 +3,12 @@
   <rect x="16" y="16" width="480" height="480" rx="88" fill="#D490B4"/>
   <text
     x="256"
-    y="395"
+    y="370"
     font-family="Georgia, serif"
     font-weight="900"
-    font-size="310"
+    font-size="360"
     text-anchor="middle"
     fill="white"
     opacity="0.95"
   >?</text>
-  <text
-    x="256"
-    y="218"
-    font-family="Georgia, serif"
-    font-weight="900"
-    font-size="95"
-    text-anchor="middle"
-    fill="#C47FA0"
-  >O</text>
 </svg>
