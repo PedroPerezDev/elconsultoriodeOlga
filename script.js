@@ -1,7 +1,7 @@
 /* ─── Constantes ────────────────────────────────── */
 const SIZES   = ['size-xl', 'size-lg', 'size-md', 'size-sm'];
 const WEIGHTS = ['weight-black', 'weight-bold', 'weight-regular', 'weight-light'];
-const COLORS  = ['#E8A0BF', '#F9D976', '#9DD9D2', '#B5EAD7', '#F6C9A0', '#C3A8E8'];
+const COLORS  = ['#E8547A', '#F9C846', '#2EC4B6', '#FF6B35', '#FFFFFF', '#A78BFA'];
 const LS_KEY  = 'frases_usuario';
 
 const FALLBACK_FRASES = [

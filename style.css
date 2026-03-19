@@ -1,12 +1,12 @@
 /* ─── Variables ─────────────────────────────────── */
 :root {
-  --color-bg:       #F5F0FF;
-  --color-card:     #FFF8FD;
-  --color-hot-pink: #F4A7C3;
-  --color-yellow:   #F9E4A0;
-  --color-cyan:     #A8E6E2;
-  --color-orange:   #FAC9A0;
-  --color-white:    #2D2040;
+  --color-bg:       #FFFAF4;
+  --color-card:     #1C1C2E;
+  --color-hot-pink: #E8547A;
+  --color-yellow:   #F9C846;
+  --color-cyan:     #2EC4B6;
+  --color-orange:   #FF6B35;
+  --color-white:    #1C1C2E;
 
   --font-display: 'Bebas Neue', Impact, system-ui, sans-serif;
   --font-body:    'Inter', system-ui, sans-serif;
@@ -86,7 +86,6 @@ body {
   max-height: 260px;
   width: auto;
   object-fit: contain;
-  filter: drop-shadow(0 0 14px var(--color-hot-pink));
   animation: mascot-float 4s ease-in-out infinite;
   pointer-events: none;
 }
@@ -159,26 +158,26 @@ body {
   max-width: 100%;
   word-break: break-word;
   overflow-wrap: break-word;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
 }
 
 /* Tamaños */
 .size-xl { font-size: clamp(2rem,   6vw, 5rem); }
 .size-lg { font-size: clamp(1.5rem, 4vw, 3rem); }
 .size-md { font-size: clamp(1rem,   2.5vw, 1.6rem); }
-.size-sm { font-size: clamp(0.75rem,1.5vw, 1rem); }
+.size-sm { font-size: clamp(0.85rem,1.5vw, 1.1rem); }
 
 /* Pesos */
 .weight-black {
   font-family: var(--font-display);
   font-weight: 900;
-  -webkit-text-stroke: 1px currentColor;
 }
 .weight-bold    { font-family: var(--font-body); font-weight: 700; }
 .weight-regular { font-family: var(--font-body); font-weight: 400; }
 .weight-light   {
   font-family: var(--font-body);
-  font-weight: 100;
-  letter-spacing: 0.12em;
+  font-weight: 300;
+  letter-spacing: 0.08em;
 }
 
 /* ─── Botones ─────────────────────────────────────── */
@@ -220,8 +219,8 @@ body {
 
 .btn-primary {
   background: var(--color-hot-pink);
-  color: var(--color-white);
-  border-color: var(--color-white);
+  color: #ffffff;
+  border-color: #ffffff;
   box-shadow: 4px 4px 0 var(--color-yellow);
 }
 .btn-primary:hover {
@@ -231,8 +230,8 @@ body {
 
 .btn-secondary {
   background: var(--color-cyan);
-  color: var(--color-bg);
-  border-color: var(--color-bg);
+  color: #1C1C2E;
+  border-color: #1C1C2E;
   box-shadow: 4px 4px 0 var(--color-orange);
 }
 .btn-secondary:hover {
@@ -243,7 +242,7 @@ body {
 .btn-ghost {
   background: transparent;
   color: var(--color-white);
-  border-color: rgba(45,32,64,0.3);
+  border-color: rgba(28,28,46,0.3);
 }
 .btn-ghost:hover { border-color: var(--color-white); }
 
@@ -251,7 +250,7 @@ body {
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(45, 32, 64, 0.55);
+  background: rgba(28, 28, 46, 0.6);
   backdrop-filter: blur(6px);
   display: flex;
   align-items: center;
@@ -293,10 +292,10 @@ body {
 }
 
 .modal-textarea {
-  background: rgba(255,255,255,0.7);
-  border: 2px solid rgba(45,32,64,0.2);
+  background: rgba(255,255,255,0.08);
+  border: 2px solid rgba(255,255,255,0.2);
   border-radius: 8px;
-  color: var(--color-white);
+  color: #ffffff;
   font-family: var(--font-body);
   font-size: 1rem;
   padding: 0.75rem 1rem;
@@ -331,7 +330,7 @@ body {
   font-family: var(--font-body);
   font-weight: 400;
   font-size: 1.1rem;
-  color: rgba(45,32,64,0.4);
+  color: rgba(255,255,255,0.4);
   text-align: center;
   width: 100%;
   padding: 1rem;
