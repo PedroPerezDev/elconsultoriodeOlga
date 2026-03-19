@@ -48,6 +48,16 @@
             <line x1="5" y1="12" x2="19" y2="12"/>
           </svg>
         </button>
+        <button id="btnVerFrases" class="btn btn-danger" title="Ver y eliminar frases">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="8" y1="6" x2="21" y2="6"/>
+            <line x1="8" y1="12" x2="21" y2="12"/>
+            <line x1="8" y1="18" x2="21" y2="18"/>
+            <circle cx="3" cy="6" r="0.5" fill="currentColor"/>
+            <circle cx="3" cy="12" r="0.5" fill="currentColor"/>
+            <circle cx="3" cy="18" r="0.5" fill="currentColor"/>
+          </svg>
+        </button>
       </div>
 
     </section>
@@ -68,6 +78,17 @@
       <div class="modal-actions">
         <button id="btnGuardarFrase" class="btn btn-primary btn-text">Guardar</button>
         <button id="btnCerrarModal" class="btn btn-ghost btn-text">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal lista de frases -->
+  <div class="modal-overlay" id="modalLista" role="dialog" aria-modal="true" aria-labelledby="modalListaTitulo">
+    <div class="modal-box modal-box--lista">
+      <h2 id="modalListaTitulo" class="modal-title">TODAS LAS FRASES</h2>
+      <ul id="listaFrases" class="frases-list"></ul>
+      <div class="modal-actions">
+        <button id="btnCerrarLista" class="btn btn-ghost btn-text">Cerrar</button>
       </div>
     </div>
   </div>

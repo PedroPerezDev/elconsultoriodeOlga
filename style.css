@@ -235,6 +235,12 @@ body {
 }
 .btn-ghost:hover { border-color: var(--color-white); }
 
+.btn-danger {
+  background: #E88FA8;
+  color: var(--color-white);
+  border-color: var(--color-white);
+}
+
 /* ─── Modal ──────────────────────────────────────── */
 .modal-overlay {
   position: fixed;
@@ -272,6 +278,54 @@ body {
 }
 
 .modal-overlay.is-open .modal-box { transform: scale(1); }
+
+.modal-box--lista {
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── Lista de frases ────────────────────────────── */
+.frases-list {
+  list-style: none;
+  overflow-y: auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-right: 0.25rem;
+}
+
+.frases-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  background: rgba(61,43,61,0.06);
+  border-radius: 8px;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.9rem;
+  line-height: 1.3;
+}
+
+.frases-list li span {
+  flex: 1;
+  color: var(--color-white);
+}
+
+.btn-borrar {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #C0657A;
+  padding: 0.2rem;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  transition: color var(--transition);
+}
+.btn-borrar:hover { color: #A0304A; }
 
 .modal-title {
   font-family: var(--font-display);

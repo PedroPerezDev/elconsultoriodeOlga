@@ -1,6 +1,7 @@
 /* ─── Constantes ────────────────────────────────── */
 const COLORS = ['#C2608E', '#7AAFC4', '#5BA08A', '#A07ABF', '#C47A5A', '#3D2B3D'];
-const LS_KEY  = 'frases_usuario';
+const LS_KEY       = 'frases_usuario';
+const LS_BORRADAS  = 'frases_borradas';
 
 const FALLBACK_FRASES = [
   'El arte es mentira que dice la verdad',
@@ -18,10 +19,14 @@ let indiceMostrado = -1;
 const phraseCard      = document.getElementById('phraseCard');
 const btnNuevaFrase   = document.getElementById('btnNuevaFrase');
 const btnAnadirFrase  = document.getElementById('btnAnadirFrase');
+const btnVerFrases    = document.getElementById('btnVerFrases');
 const modalOverlay    = document.getElementById('modalOverlay');
 const nuevaFraseInput = document.getElementById('nuevaFraseInput');
 const btnGuardarFrase = document.getElementById('btnGuardarFrase');
 const btnCerrarModal  = document.getElementById('btnCerrarModal');
+const modalLista      = document.getElementById('modalLista');
+const listaFrases     = document.getElementById('listaFrases');
+const btnCerrarLista  = document.getElementById('btnCerrarLista');
 
 /* ─── Carga de datos ─────────────────────────────── */
 async function cargarFrasesIniciales() {
@@ -48,6 +53,21 @@ function cargarDesdeLS() {
 
 function guardarEnLS(frases) {
   localStorage.setItem(LS_KEY, JSON.stringify(frases));
+}
+
+function cargarBorradas() {
+  try {
+    const raw = localStorage.getItem(LS_BORRADAS);
+    if (!raw) return [];
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    return [];
+  }
+}
+
+function guardarBorradas(borradas) {
+  localStorage.setItem(LS_BORRADAS, JSON.stringify(borradas));
 }
 
 /* ─── Utilidades aleatorias ──────────────────────── */
@@ -142,19 +162,74 @@ function guardarFrase() {
   mostrarFraseAleatoria();
 }
 
+/* ─── Modal lista ────────────────────────────────── */
+function abrirLista() {
+  listaFrases.innerHTML = '';
+  pool.forEach((frase) => {
+    const li = document.createElement('li');
+    const span = document.createElement('span');
+    span.textContent = frase;
+    const btn = document.createElement('button');
+    btn.className = 'btn-borrar';
+    btn.title = 'Eliminar';
+    btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg>`;
+    btn.addEventListener('click', () => borrarFrase(frase));
+    li.appendChild(span);
+    li.appendChild(btn);
+    listaFrases.appendChild(li);
+  });
+  modalLista.classList.add('is-open');
+}
+
+function cerrarLista() {
+  modalLista.classList.remove('is-open');
+}
+
+function borrarFrase(frase) {
+  // Quitar del pool
+  pool = pool.filter(f => f !== frase);
+  indiceMostrado = -1;
+
+  // Si era frase de usuario, quitar del LS
+  const frasesUsuario = cargarDesdeLS().filter(f => f !== frase);
+  guardarEnLS(frasesUsuario);
+
+  // Si era frase inicial, añadir a borradas
+  const borradas = cargarBorradas();
+  if (!borradas.includes(frase)) {
+    borradas.push(frase);
+    guardarBorradas(borradas);
+  }
+
+  // Refrescar la lista
+  abrirLista();
+
+  // Si ya no hay frases, mostrar mensaje
+  if (pool.length === 0) {
+    cerrarLista();
+    mostrarFraseAleatoria();
+  }
+}
+
 /* ─── Eventos ────────────────────────────────────── */
 btnNuevaFrase.addEventListener('click', mostrarFraseAleatoria);
 btnAnadirFrase.addEventListener('click', abrirModal);
+btnVerFrases.addEventListener('click', abrirLista);
 btnGuardarFrase.addEventListener('click', guardarFrase);
 btnCerrarModal.addEventListener('click', cerrarModal);
+btnCerrarLista.addEventListener('click', cerrarLista);
 
 modalOverlay.addEventListener('click', (e) => {
   if (e.target === modalOverlay) cerrarModal();
 });
+modalLista.addEventListener('click', (e) => {
+  if (e.target === modalLista) cerrarLista();
+});
 
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && modalOverlay.classList.contains('is-open')) {
+  if (e.key === 'Escape') {
     cerrarModal();
+    cerrarLista();
   }
 });
 
@@ -174,7 +249,8 @@ nuevaFraseInput.addEventListener('input', () => {
 async function init() {
   const frasesIniciales = await cargarFrasesIniciales();
   const frasesUsuario   = cargarDesdeLS();
-  pool = [...frasesIniciales, ...frasesUsuario];
+  const borradas        = cargarBorradas();
+  pool = [...frasesIniciales, ...frasesUsuario].filter(f => !borradas.includes(f));
   mostrarFraseAleatoria();
 }
 
