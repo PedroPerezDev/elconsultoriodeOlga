@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>¿Qué prefieres? — Frases Pop Art</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@100;400;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <h1 class="site-title">FRASES<span class="title-accent">.</span></h1>
+    <p class="site-subtitle">Pop Art Edition</p>
+  </header>
+
+  <main class="main-grid">
+
+    <aside class="mascot-column">
+      <img src="imagenes/olga.png" alt="Olga la mascota" class="mascot-img" />
+    </aside>
+
+    <section class="phrase-stage">
+      <div id="phraseCard" class="phrase-card" aria-live="polite">
+        <!-- JS inyecta spans aquí -->
+      </div>
+
+      <div class="action-buttons">
+        <button id="btnNuevaFrase" class="btn btn-primary" title="Nueva frase aleatoria">
+          &#8635;
+        </button>
+        <button id="btnAnadirFrase" class="btn btn-secondary" title="Añadir frase">
+          +
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modal -->
+  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-box">
+      <h2 id="modalTitle" class="modal-title">AÑADE TU FRASE</h2>
+      <textarea
+        id="nuevaFraseInput"
+        class="modal-textarea"
+        placeholder="Escribe aquí tu frase favorita..."
+        maxlength="200"
+        rows="4"
+      ></textarea>
+      <div class="modal-actions">
+        <button id="btnGuardarFrase" class="btn btn-primary btn-text">Guardar</button>
+        <button id="btnCerrarModal" class="btn btn-ghost btn-text">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
