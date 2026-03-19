@@ -8,7 +8,7 @@
   --color-orange:   #F5D4C8;
   --color-white:    #3D2B3D;
 
-  --font-display: 'Nunito', system-ui, sans-serif;
+  --font-display: 'Bebas Neue', Impact, system-ui, sans-serif;
   --font-body:    'Fredoka', system-ui, sans-serif;
 
   --radius: 12px;
@@ -42,9 +42,9 @@ body {
 
 .site-title {
   font-family: var(--font-display);
-  font-size: clamp(1.8rem, 7vw, 2.8rem);
+  font-size: clamp(2.5rem, 8vw, 4rem);
   color: #ffffff;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.05em;
   line-height: 1;
   text-align: center;
 }
