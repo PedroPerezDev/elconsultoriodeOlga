@@ -1,12 +1,12 @@
 /* ─── Variables ─────────────────────────────────── */
 :root {
-  --color-bg:       #FFFAF4;
-  --color-card:     #1C1C2E;
+  --color-bg:       #0F0F1A;
+  --color-card:     #2A2A40;
   --color-hot-pink: #E8547A;
   --color-yellow:   #F9C846;
   --color-cyan:     #2EC4B6;
   --color-orange:   #FF6B35;
-  --color-white:    #1C1C2E;
+  --color-white:    #E8E8F0;
 
   --font-display: 'Bebas Neue', Impact, system-ui, sans-serif;
   --font-body:    'Inter', system-ui, sans-serif;
@@ -86,13 +86,7 @@ body {
   max-height: 260px;
   width: auto;
   object-fit: contain;
-  animation: mascot-float 4s ease-in-out infinite;
   pointer-events: none;
-}
-
-@keyframes mascot-float {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-10px); }
 }
 
 /* ─── Phrase stage ───────────────────────────────── */
