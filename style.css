@@ -325,6 +325,15 @@ body {
   padding: 1rem;
 }
 
+/* ─── Footer ─────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  font-size: 0.7rem;
+  color: rgba(61, 43, 61, 0.45);
+  padding: 0.4rem;
+  flex-shrink: 0;
+}
+
 /* ─── Pantallas muy pequeñas (iPhone SE ~667px) ──── */
 @media (max-height: 680px) {
   .comic-bubble {
