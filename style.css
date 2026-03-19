@@ -32,18 +32,20 @@ body {
 
 /* ─── Header ─────────────────────────────────────── */
 .site-header {
-  background: #C47FA0;
-  padding: 1rem 1.5rem;
+  background: var(--color-hot-pink);
+  padding: 1.25rem 2rem;
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: center;
+  gap: 1rem;
+  box-shadow: 0 4px 0 var(--color-yellow);
   flex-shrink: 0;
 }
 
 .site-title {
   font-family: var(--font-display);
-  font-size: clamp(2.5rem, 8vw, 4rem);
-  color: #ffffff;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  color: var(--color-yellow);
   letter-spacing: 0.05em;
   line-height: 1;
   text-align: center;
