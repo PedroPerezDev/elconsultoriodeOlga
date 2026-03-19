@@ -1,4 +1,4 @@
-const CACHE = 'consultorio-olga-v1';
+const CACHE = 'consultorio-olga-v2';
 const ASSETS = [
   './',
   './index.html',
