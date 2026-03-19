@@ -72,13 +72,17 @@ body {
   box-sizing: border-box;
 }
 
+/* ─── Stage bottom (botones + Olga) ─────────────── */
+.stage-bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-top: 1rem;
+}
+
 /* ─── Mascot ─────────────────────────────────────── */
 .mascot-img {
-  position: absolute;
-  bottom: 0;
-  right: 1rem;
-  height: 90%;
-  max-height: 260px;
+  height: clamp(140px, 25vw, 220px);
   width: auto;
   object-fit: contain;
   pointer-events: none;
@@ -92,33 +96,52 @@ body {
   gap: 1.25rem;
 }
 
-/* ─── Card wrapper ───────────────────────────────── */
-.card-wrapper {
+/* ─── Speech bubble ──────────────────────────────── */
+.speech-bubble {
   flex: 1;
+  min-height: 0;
   position: relative;
-  min-height: 200px;
-}
-
-/* ─── Phrase card ────────────────────────────────── */
-.phrase-card {
-  position: absolute;
-  inset: 0;
   background: var(--color-card);
   border: 3px solid var(--color-yellow);
   border-radius: var(--radius);
   padding: clamp(1.2rem, 3vw, 2.5rem);
-  padding-right: clamp(120px, 30%, 280px);
+  box-shadow:
+    6px 6px 0 var(--color-hot-pink),
+    12px 12px 0 var(--color-yellow);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+/* Cola del bocadillo apuntando a Olga (abajo derecha) */
+.speech-bubble::before {
+  content: '';
+  position: absolute;
+  bottom: -26px;
+  right: 72px;
+  border: 14px solid transparent;
+  border-top-color: var(--color-yellow);
+  border-bottom: 0;
+}
+.speech-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  right: 75px;
+  border: 11px solid transparent;
+  border-top-color: var(--color-card);
+  border-bottom: 0;
+}
+
+/* ─── Phrase card (contenedor del texto) ─────────── */
+#phraseCard {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   align-content: center;
   align-items: center;
   gap: 0.2em 0.4em;
-  box-shadow:
-    6px 6px 0 var(--color-hot-pink),
-    12px 12px 0 var(--color-yellow);
-  line-height: 1.1;
-  overflow: hidden;
-  transition: box-shadow var(--transition);
+  line-height: 1.4;
   word-break: break-word;
   overflow-wrap: break-word;
 }
@@ -320,16 +343,13 @@ body {
     padding: 0.75rem;
   }
   .phrase-stage {
-    gap: 0.75rem;
+    gap: 0;
+  }
+  .stage-bottom {
+    padding-top: 0.5rem;
   }
   .mascot-img {
-    height: 55%;
-    max-height: none;
-    right: 0.5rem;
+    height: clamp(120px, 35vw, 170px);
   }
-  .phrase-card {
-    padding: 1rem;
-    padding-right: 110px;
-  }
-  .action-buttons { justify-content: center; }
+  .action-buttons { justify-content: flex-start; }
 }

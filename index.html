@@ -18,21 +18,25 @@
   <main class="main-grid">
 
     <section class="phrase-stage">
-      <div class="card-wrapper">
-        <div id="phraseCard" class="phrase-card" aria-live="polite">
+
+      <div class="speech-bubble">
+        <div id="phraseCard" aria-live="polite">
           <!-- JS inyecta spans aquí -->
+        </div>
+      </div>
+
+      <div class="stage-bottom">
+        <div class="action-buttons">
+          <button id="btnNuevaFrase" class="btn btn-primary" title="Nueva frase aleatoria">
+            &#8635;
+          </button>
+          <button id="btnAnadirFrase" class="btn btn-secondary" title="Añadir frase">
+            +
+          </button>
         </div>
         <img src="imagenes/olga.png" alt="Olga la mascota" class="mascot-img" />
       </div>
 
-      <div class="action-buttons">
-        <button id="btnNuevaFrase" class="btn btn-primary" title="Nueva frase aleatoria">
-          &#8635;
-        </button>
-        <button id="btnAnadirFrase" class="btn btn-secondary" title="Añadir frase">
-          +
-        </button>
-      </div>
     </section>
 
   </main>
