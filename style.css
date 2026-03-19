@@ -8,7 +8,7 @@
   --color-orange:   #F5D4C8;
   --color-white:    #3D2B3D;
 
-  --font-display: 'Bebas Neue', Impact, system-ui, sans-serif;
+  --font-display: 'Pacifico', cursive, system-ui;
   --font-body:    'Fredoka', system-ui, sans-serif;
 
   --radius: 12px;
@@ -32,21 +32,23 @@ body {
 
 /* ─── Header ─────────────────────────────────────── */
 .site-header {
-  background: var(--color-hot-pink);
-  padding: 1.25rem 2rem;
+  background: #6B2D8B;
+  padding: 1rem 1.5rem;
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: center;
-  gap: 1rem;
-  box-shadow: 0 4px 0 var(--color-yellow);
+  box-shadow: 0 4px 0 #3D1559;
+  flex-shrink: 0;
 }
 
 .site-title {
   font-family: var(--font-display);
-  font-size: clamp(2.5rem, 6vw, 4rem);
-  color: var(--color-yellow);
-  letter-spacing: 0.05em;
-  line-height: 1;
+  font-size: clamp(1.6rem, 6vw, 2.4rem);
+  color: #FFE87C;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  text-align: center;
+  text-shadow: 2px 2px 0 #3D1559;
 }
 
 .title-accent { color: var(--color-white); }
